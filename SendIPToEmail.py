@@ -1,6 +1,7 @@
 import smtplib
 import ssl
 import subprocess
+from email.message import EmailMessage
 from getpass import getpass
 
 
@@ -14,7 +15,17 @@ class Email:
         self.senderEmailPassword = senderEmailPassword
         self.recieverEmail = recieverEmail
 
-    def send(self, message: str) -> tuple:
+    def buildEmail(
+        self, subject: str = "Hello World", message: str = "Hello World"
+    ) -> None:
+        foo = EmailMessage()
+        foo.set_content(message)
+        foo["Subject"] = subject
+        foo["From"] = self.getSenderEmail()
+        foo["To"] = self.getRecieverEmail()
+        return foo
+
+    def send(self, email: EmailMessage) -> tuple:
         sender = self.getSenderAccount()
         port = 465
         context = ssl.create_default_context()
@@ -33,7 +44,7 @@ If this is not the issue then your EMAIL or PASSWORD is probably incorrect.
                     """
                 )
                 exit(1)
-            gmail.sendmail(sender[0], self.getRecieverEmail(), message)
+            gmail.sendmail(sender[0], self.getRecieverEmail(), email.as_string())
             gmail.close()
 
     def getSenderAccount(self) -> list:
@@ -59,13 +70,13 @@ def program() -> None:
     # Comment this code out and uncomment the below code in order to run this
     # application in production environments.
 
-    senderEmail = input("What is your GMail email address? ")
-    senderPassword = getpass("What is your GMail email password? ")
-    reciverEmail = input("What is the recieving email address? ")
+    # senderEmail = input("What is your GMail email address? ")
+    # senderPassword = getpass("What is your GMail email password? ")
+    # reciverEmail = input("What is the recieving email address? ")
 
-    # senderEmail = None
-    # senderPassword = None
-    # reciverEmail = None
+    senderEmail = "Dev.NicholasSynovic@gmail.com"
+    senderPassword = "nicholas0429"
+    reciverEmail = "Nicholas.Synovic@gmail.com"
 
     ipAddress = getIPs()[0]
 
@@ -75,16 +86,14 @@ def program() -> None:
         recieverEmail=reciverEmail,
     )
 
-    message = (
-        """
-Subject: Network Pi IP Address
+    subject = "Linux Computer IP Address"
+    message = "Linux Computer IP Address is %s" % ipAddress
 
-My IP Address is %s
-"""
-        % ipAddress
-    )
-
-    email.send(message=message)
+    print("Hello world")
+    foo = email.buildEmail(subject=subject, message=message)
+    print("Hello world")
+    email.send(email=foo)
+    print("Hello world")
 
 
 program()

@@ -1,35 +1,37 @@
-# IP Sender
->  Sends the IP address of a Linux computer to an email address.
+# IP To Email
 
-## Table of Contents
-### - *[About](#about)*
-### - *[Use Case](use-case)*
-### - *[Installation Instructions](#installation-instructions)*
-### - *[Implementation Instructions](#implementation-instructions)*
-### - *[Project Inspiration](#project-inspiration)*
-### - *[License](#license)*
-
----
 ## About
-This code is meant to quickly send the IP address of a Linux machine to any email address.
 
----
+This is a Python3 tool to send the email address of a computer to a designated email address.
+
+### Note
+
+This program does require that the computer already be connected to the internet. So make sure that this program is ran after a network connection is established if you are planning to use this script on boot.
+
 ## Use Case
-This is a utility script that is meant to be run at boot on a headless Linux machine.
 
----
-## Installation Instructions
-This script requires  >= Python 3.7.x. Just configure the script to be run at boot.
+Sending a computer's IP address to an email address on boot.
 
----
-## Project Inspiration
-This project came into being because I couldn't set a static IP address to a Raspberry Pi that was never connected to a monitor.
+## Requirements
 
----
-## License
-This project is under the GNU Affero General Public License v3.0.
+1. Have Python 3.9+ installed
+2. Have a GMail account
+3. Make sure that GMail account allows for unauthorized applications
 
-To see what permissions this license grants you, please visit [Choose a License](https://choosealicense.com/licenses/agpl-3.0/) for more information.
+## How to Use
 
-You can read the license [here](LICENSE).
+0. Make sure that you have  on your computer.
+1. Execute `python3 ipToEmail.py -s SENDER_EMAIL_ADDRESS -p SENDER_EMAIL_PASSWORD -r RECIEVER_EMAIL_ADDRESS`
 
+### Note
+
+- If you would like to save the credentials to a file, add the `--save` arguement at the end of the string
+- If you would like to load data from a file, execute `python3 ipToEmail.py`
+- You can execute `python3 ipToEmail.py -h` or `python3 ipToEmail.py --help` to see a full list of arguements and their descriptions
+
+## How to Contribute
+
+There are several ways that you can contribue:
+
+1. Report issues [here](https://github.com/NicholasSynovic/GitHub-Repository-Displayer/issues)
+2. Fork the code and improve it!

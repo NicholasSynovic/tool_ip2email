@@ -6,10 +6,6 @@ from getpass import getpass
 
 
 class Email:
-
-    # Some of the code below came from: https://realpython.com/
-    # python-send-email
-
     def __init__(self, senderEmail: str, senderEmailPassword: str, recieverEmail: str):
         self.senderEmail = senderEmail
         self.senderEmailPassword = senderEmailPassword

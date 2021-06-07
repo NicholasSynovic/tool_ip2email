@@ -1,8 +1,9 @@
 import email
-from email import message
 import smtplib
 import ssl
+from email import message
 from email.message import EmailMessage
+
 import logger
 
 
@@ -28,11 +29,7 @@ def sendEmail(
         try:
             gmailConnection.login(user=sender, password=password)
         except smtplib.SMTPAuthenticationError as authenticationError:
-            return [
-                authenticationError.str(),
-                'You need to turn on "Less secure app access" in your Google account beforeyou can use this program (https://myaccount.google.com/lesssecureapps).',
-                "If this is not the issue then your EMAIL or PASSWORD is probably incorrect.",
-            ]
+            return False
 
         gmailConnection.sendmail(
             from_addr=sender, to_addrs=reciever, msg=email.as_string()

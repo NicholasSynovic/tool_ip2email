@@ -15,6 +15,12 @@ if __name__ == "__main__":
     recieverEmailAddress = args.reciever[0]
     subjectLine = args.subject
     message = args.message
+
+    try:
+        senderAppPassword = args.app_password[0]
+    except TypeError:
+        senderAppPassword = ""
+
     logger.logToFile(
         message="Assign command line arguements to variables", filename=log
     )
@@ -24,6 +30,7 @@ if __name__ == "__main__":
     logger.logToFile(
         message="Sender Email Password: " + senderEmailPassword, filename=log
     )
+    logger.logToFile(message="Sender App Password: " + senderAppPassword, filename=log)
     logger.logToFile(
         message="Reciever Email Address: " + recieverEmailAddress, filename=log
     )

@@ -40,8 +40,8 @@ def arguementHandling() -> Namespace:
         nargs=1,
         type=str,
         required=False,
-        help="Message to stick to at the top of the email address",
-        default="Your computer's IP address is:",
+        help="Message to append before the email address",
+        default="Your computer's IP address is: ",
     )
 
     parser.add_argument(
@@ -50,6 +50,7 @@ def arguementHandling() -> Namespace:
         type=str,
         required=False,
         help="The email's subject line",
+        default="IP Address",
     )
 
     return parser.parse_args()

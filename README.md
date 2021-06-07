@@ -1,12 +1,15 @@
 # IP To Email
 
+[![](https://img.shields.io/badge/OS-Ubuntu-red)]()
+[![](https://img.shields.io/badge/Language-Python%203.9%2B-blue)]()
+
 ## About
 
 This is a Python3 tool to send the email address of a computer to a designated email address.
 
 ### Note
 
-This program does require that the computer already be connected to the internet. So make sure that this program is ran after a network connection is established if you are planning to use this script on boot.
+This program does require that the computer already be connected to the internet.
 
 ## Use Case
 
@@ -25,7 +28,7 @@ Sending a computer's IP address to an email address on boot.
 
 ### Note
 
-- If you would like to save the credentials to a file, add the `--save` arguement at the end of the string
+- If `SENDER_EMAIL_ADDRESS` utilizes 2FA for their authentication, you will need to provide an [application password](https://support.google.com/accounts/answer/185833#zippy=%2Cwhy-you-may-need-an-app-password)
 - If you would like to load data from a file, execute `python3 ipToEmail.py`
 - You can execute `python3 ipToEmail.py -h` or `python3 ipToEmail.py --help` to see a full list of arguements and their descriptions
 

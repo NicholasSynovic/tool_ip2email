@@ -16,11 +16,6 @@ if __name__ == "__main__":
     subjectLine = args.subject
     message = args.message
 
-    try:
-        senderAppPassword = args.app_password[0]
-    except TypeError:
-        senderAppPassword = ""
-
     logger.logToFile(
         message="Assign command line arguements to variables", filename=log
     )
@@ -30,7 +25,6 @@ if __name__ == "__main__":
     logger.logToFile(
         message="Sender Email Password: " + senderEmailPassword, filename=log
     )
-    logger.logToFile(message="Sender App Password: " + senderAppPassword, filename=log)
     logger.logToFile(
         message="Reciever Email Address: " + recieverEmailAddress, filename=log
     )
@@ -52,7 +46,7 @@ if __name__ == "__main__":
     )
     logger.logToFile(message="Create email object", filename=log)
 
-    send = emailComposer.sendEmail(
+    sendWithEmailPassword = emailComposer.sendEmail(
         reciever=recieverEmailAddress,
         sender=senderEmailAddress,
         password=senderEmailPassword,
@@ -60,13 +54,14 @@ if __name__ == "__main__":
         email=email,
     )
 
-    if send:
+    if sendWithEmailPassword:
         logger.logToFile(message="Email sent to " + recieverEmailAddress, filename=log)
         exit(0)
     else:
         logger.logToFile(message="Email not sent", filename=log)
+
         logger.logToFile(
-            message='You need to turn on "Less secure app access" in your Google account before you can use this program (https://myaccount.google.com/lesssecureapps).\n        If this is not the issue then your EMAIL or PASSWORD is probably incorrect.',
+            message="You need to provide an app password to use this application.\n        If this is not the issue then your email or password is incorrect.",
             filename=log,
         )
         exit(1)

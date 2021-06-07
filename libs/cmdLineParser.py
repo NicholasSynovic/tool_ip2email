@@ -26,15 +26,6 @@ def arguementHandling() -> Namespace:
     )
 
     parser.add_argument(
-        "-a",
-        "--app-password",
-        nargs=1,
-        type=str,
-        required=False,
-        help="A Google App Password that will work if you account uses 2FA",
-    )
-
-    parser.add_argument(
         "-r",
         "--reciever",
         nargs=1,

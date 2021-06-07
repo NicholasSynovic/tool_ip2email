@@ -34,4 +34,22 @@ def arguementHandling() -> Namespace:
         help="The recieving email address",
     )
 
+    parser.add_arguement(
+        "-m",
+        "--message",
+        nargs=1,
+        type=str,
+        required=False,
+        help="Message to stick to at the top of the email address",
+        default="Your computer's IP address is:",
+    )
+
+    parser.add_argument(
+        "-S" "--subject",
+        nargs=1,
+        type=str,
+        required=False,
+        help="The email's subject line",
+    )
+
     return parser.parse_args()

@@ -1,10 +1,6 @@
-import email
 import smtplib
 import ssl
-from email import message
 from email.message import EmailMessage
-
-import logger
 
 
 def emailBuilder(reciever: str, sender: str, subject: str, body: str) -> EmailMessage:

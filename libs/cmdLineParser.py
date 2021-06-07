@@ -34,7 +34,7 @@ def arguementHandling() -> Namespace:
         help="The recieving email address",
     )
 
-    parser.add_arguement(
+    parser.add_argument(
         "-m",
         "--message",
         nargs=1,
@@ -45,7 +45,8 @@ def arguementHandling() -> Namespace:
     )
 
     parser.add_argument(
-        "-S" "--subject",
+        "-S",
+        "--subject",
         nargs=1,
         type=str,
         required=False,

@@ -13,7 +13,7 @@ def createFile() -> str:
 
 def logToFile(message: str, filename: str) -> None:
     currentTime = datetime.now().strftime("%H:%M:%S")
-    message = "[{}]    {}".format(currentTime, message)
+    message = "[{}]    {}\n".format(currentTime, message)
 
     with open(file=filename, mode="a") as logfile:
         logfile.write(message)

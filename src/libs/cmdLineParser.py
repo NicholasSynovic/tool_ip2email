@@ -4,7 +4,8 @@ from argparse import Namespace
 
 def arguementHandling() -> Namespace:
     parser = argparse.ArgumentParser(
-        prog="IP To Email", usage="To send a computer's IP address to an email account."
+        prog="IP To Email",
+        usage="To send a computer's IP address to an email account.",
     )
 
     parser.add_argument(

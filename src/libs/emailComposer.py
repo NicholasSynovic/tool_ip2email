@@ -3,7 +3,12 @@ import ssl
 from email.message import EmailMessage
 
 
-def emailBuilder(reciever: str, sender: str, subject: str, body: str) -> EmailMessage:
+def emailBuilder(
+    reciever: str,
+    sender: str,
+    subject: str,
+    body: str,
+) -> EmailMessage:
     email = EmailMessage()
     email["To"] = reciever
     email["From"] = sender
@@ -14,8 +19,12 @@ def emailBuilder(reciever: str, sender: str, subject: str, body: str) -> EmailMe
 
 
 def sendEmail(
-    reciever: str, sender: str, password: str, subject: str, email: EmailMessage
-) -> bool or list:
+    reciever: str,
+    sender: str,
+    password: str,
+    subject: str,
+    email: EmailMessage,
+) -> bool | list:
     gmailSMTPPort = 465
     context = ssl.create_default_context()
 
@@ -24,7 +33,7 @@ def sendEmail(
     ) as gmailConnection:
         try:
             gmailConnection.login(user=sender, password=password)
-        except smtplib.SMTPAuthenticationError as authenticationError:
+        except smtplib.SMTPAuthenticationError:
             return False
 
         gmailConnection.sendmail(

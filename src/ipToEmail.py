@@ -1,7 +1,4 @@
-from libs import cmdLineInterface
-from libs import cmdLineParser
-from libs import emailComposer
-from libs import logger
+from libs import cmdLineInterface, cmdLineParser, emailComposer, logger
 
 if __name__ == "__main__":
     log = logger.createFile()
@@ -36,7 +33,10 @@ if __name__ == "__main__":
     logger.logToFile(message="Message: " + message, filename=log)
 
     message = message + ipAddress
-    logger.logToFile(message='Create email message: "' + message + '"', filename=log)
+    logger.logToFile(
+        message='Create email message: "' + message + '"',
+        filename=log,
+    )
 
     email = emailComposer.emailBuilder(
         reciever=recieverEmailAddress,
@@ -55,13 +55,16 @@ if __name__ == "__main__":
     )
 
     if sendWithEmailPassword:
-        logger.logToFile(message="Email sent to " + recieverEmailAddress, filename=log)
+        logger.logToFile(
+            message="Email sent to " + recieverEmailAddress,
+            filename=log,
+        )
         exit(0)
     else:
         logger.logToFile(message="Email not sent", filename=log)
 
         logger.logToFile(
-            message="You need to provide an app password to use this application.\n        If this is not the issue then your email or password is incorrect.",
+            message="You need to provide an app password to use this application.\n        If this is not the issue then your email or password is incorrect.",  # noqa:E501
             filename=log,
         )
         exit(1)

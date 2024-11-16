@@ -40,3 +40,6 @@ Options:
   -r, --recipient TEXT      Recipient of the email address  [required]
   --help                    Show this message and exit.
 ```
+
+You can set and get a Google app password
+[here](https://myaccount.google.com/apppasswords).

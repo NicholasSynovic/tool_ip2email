@@ -35,6 +35,23 @@ from ip2email import emailHandler, ip
     help="Recipient of the email address",
 )
 def main(emailAddress: str, password: str, recipient: str) -> None:
+    """
+    Send an email containing the device's host name and IP address to specific recipient.
+
+    The host name is located in the subject of the email address. The format of the subject is:
+
+    {hostname}'s IP Address (DAY NAME, MONTH DAY DATE)
+
+
+    The IP address is the sole information in the body.
+
+    :param emailAddress: The email address to send the message from
+    :type emailAddress: str
+    :param password: The Google app password of the email address to send the email from
+    :type password: str
+    :param recipient: The recieving email address
+    :type recipient: str
+    """  # noqa: E501
     ipAddress: str = ip.getIPAddress()
     hostname: str = ip.getHostname()
 
@@ -42,7 +59,6 @@ def main(emailAddress: str, password: str, recipient: str) -> None:
 
     email: EmailMessage = emailHandler.createEmail(
         recipient=recipient,
-        sender=emailAddress,
         subject=subject,
         body=ipAddress,
     )

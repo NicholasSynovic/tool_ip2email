@@ -5,7 +5,7 @@ from email.message import EmailMessage
 
 def createEmail(
     recipient: str,
-    email: str,
+    sender: str,
     subject: str,
     body: str,
 ) -> EmailMessage:

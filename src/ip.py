@@ -8,3 +8,12 @@ def getIPAddress() -> str:
         shell=True,
         text=True,
     ).stdout.strip()  # nosec
+
+
+def getHostname() -> str:
+    return subprocess.run(
+        args="hostname",
+        capture_output=True,
+        shell=True,
+        text=True,
+    ).stdout.strip()  # nosec

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "src"
+name = "ip2email"
 version = "0.1.0"
 description = "Hello World"
 license = "GNU Affero"

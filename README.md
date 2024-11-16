@@ -28,7 +28,7 @@ Assuming you have `git clone`d the repository:
 
 ## How To Run
 
-- `ip2email`
+- `ip2email --help`
 
 ```shell
 Usage: ip2email [OPTIONS]

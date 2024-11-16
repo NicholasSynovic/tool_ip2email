@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "ip2email"
-version = "0.1.0"
-description = "Hello World"
+version = "0.0.1"
+description = "A small utility to email a device's local IP address"
 license = "GNU Affero"
 authors = ["Nicholas M. Synovic <nicholas.synovic@gmail.com>"]
 readme = "README.md"
 homepage = "https://github.com/NicholasSynovic/template_python"
 repository = "https://github.com/NicholasSynovic/template_python"
-keywords = ["Template"]
+keywords = ["utility", "email", "unix"]
 classifiers = ["Development Status :: 1 - Planning"]
 
 [tool.poetry.dependencies]
@@ -18,3 +18,6 @@ click = "^8.1.7"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+ip2email = "ip2email.main:main"

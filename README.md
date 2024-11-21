@@ -38,6 +38,7 @@ Options:
   -p, --password TEXT       Google app password of the sender's email address
                             [required]
   -r, --recipient TEXT      Recipient of the email address  [required]
+  --version                 Show the version and exit.
   --help                    Show this message and exit.
 ```
 

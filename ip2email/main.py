@@ -44,13 +44,6 @@ def main(emailAddress: str, password: str, recipient: str) -> None:
 
 
     The IP address is the sole information in the body.
-
-    :param emailAddress: The email address to send the message from
-    :type emailAddress: str
-    :param password: The Google app password of the email address to send the email from
-    :type password: str
-    :param recipient: The recieving email address
-    :type recipient: str
     """  # noqa: E501
     ipAddress: str = ip.getIPAddress()
     hostname: str = ip.getHostname()

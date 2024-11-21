@@ -1,7 +1,14 @@
 build:
 	poetry build
 	pip install dist/*.tar.gz
-	pyinstaller --clean --onefile --workpath ./pyinstaller -n ip2email ip2email/main.py
+	poetry version --short > ip2email/_version
+	pyinstaller --clean \
+		--onefile \
+		--add-data ./ip2email/_version:. \
+		--workpath ./pyinstaller \
+		--name ip2email \
+		--hidden-import ip2email \
+		ip2email/main.py
 
 create-dev:
 	pre-commit install

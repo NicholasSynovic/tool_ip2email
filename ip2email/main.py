@@ -3,7 +3,7 @@ from email.message import EmailMessage
 
 import click
 
-from ip2email import emailHandler, ip
+from ip2email import emailHandler, getVersion, ip
 
 
 @click.command()
@@ -34,7 +34,7 @@ from ip2email import emailHandler, ip
     required=True,
     help="Recipient of the email address",
 )
-@click.version_option(package_name="ip2email")
+@click.version_option(version=getVersion())
 def main(emailAddress: str, password: str, recipient: str) -> None:
     """
     Send an email containing the device's host name and IP address to specific recipient.

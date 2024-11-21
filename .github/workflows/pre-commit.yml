@@ -10,6 +10,8 @@ jobs:
   if-pr-was-merged:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    steps:
+      - run: echo "PR ${{ github.event.number }} was merged"
 
   checkout-repository:
     needs: if-pr-was-merged

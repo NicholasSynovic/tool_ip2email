@@ -3,7 +3,7 @@ name: Package Project
 on:
   workflow_dispatch:
   release:
-    types: [published]
+    types: [created]
 
 jobs:
   build-project:
@@ -19,6 +19,7 @@ jobs:
             architecture: 'x64'
 
       - run: |
+          pip install pre-commit
           make create-dev
           source env/bin/activate
           make build

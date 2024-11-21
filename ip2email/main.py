@@ -34,6 +34,7 @@ from ip2email import emailHandler, ip
     required=True,
     help="Recipient of the email address",
 )
+@click.version_option(package_name="ip2email")
 def main(emailAddress: str, password: str, recipient: str) -> None:
     """
     Send an email containing the device's host name and IP address to specific recipient.

@@ -24,6 +24,7 @@ The format of the email address is:
 Assuming you have `git clone`d the repository:
 
 1. `make create-dev`
+1. `source env/bin/activate`
 1. `make build`
 
 ## How To Run

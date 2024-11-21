@@ -1,10 +1,10 @@
-# IP To Email (ip2email)
+# `ip2email` (IP To Email)
 
 > A small utility to email a device's local IP address
 
 ## Table of Contents
 
-- [IP To Email (ip2email)](#ip-to-email-ip2email)
+- [`ip2email` (IP To Email)](#ip2email-ip-to-email)
   - [Table of Contents](#table-of-contents)
   - [About](#about)
   - [How To Install](#how-to-install)

@@ -8,6 +8,8 @@
   - [Table of Contents](#table-of-contents)
   - [About](#about)
   - [How To Install](#how-to-install)
+    - [Get The Latest Release](#get-the-latest-release)
+    - [Build From Source](#build-from-source)
   - [How To Run](#how-to-run)
 
 ## About
@@ -20,6 +22,13 @@ The format of the email address is:
 `{hostname}'s IP Address (DAY NAME, MONTH DAY DATE)`
 
 ## How To Install
+
+### Get The Latest Release
+
+Download the `ip2email` application from
+[the latest release](https://github.com/NicholasSynovic/tool_ip2email/releases/latest/download/ip2email)
+
+### Build From Source
 
 Assuming you have `git clone`d the repository:
 

@@ -13,17 +13,11 @@ classifiers = ["Development Status :: 1 - Planning"]
 [tool.poetry.dependencies]
 python = ">=3.10,<3.14"
 click = "^8.1.7"
-
-[tool.poetry-dynamic-versioning]
-enable = true
-vcs = "git"
-metadata = false
-pattern = "(?P<base>\\d.\\d.\\d+)"
-format = "v{base}"
+pdoc3 = "^0.11.1"
 
 [build-system]
-requires = ["poetry-core", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
-build-backend = "poetry_dynamic_versioning.backend"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 ip2email = "ip2email.main:main"

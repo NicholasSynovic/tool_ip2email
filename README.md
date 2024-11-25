@@ -40,7 +40,7 @@ Assuming you have `git clone`d the repository:
 
 - `ip2email --help`
 
-```shell
+```text
 Usage: ip2email [OPTIONS]
 
 Options:
